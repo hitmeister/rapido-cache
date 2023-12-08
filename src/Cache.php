@@ -300,7 +300,7 @@ abstract class Cache implements CacheInterface, \ArrayAccess
      * @param mixed     $offset
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return $this->exists($offset);
     }
@@ -312,7 +312,7 @@ abstract class Cache implements CacheInterface, \ArrayAccess
      * @param mixed     $offset
      * @return mixed
      */
-    public function offsetGet($offset)
+    public function offsetGet($offset): mixed
     {
         return $this->get($offset);
     }
@@ -325,7 +325,7 @@ abstract class Cache implements CacheInterface, \ArrayAccess
      * @param mixed     $offset
      * @param mixed     $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->set($offset, $value);
     }
@@ -336,7 +336,7 @@ abstract class Cache implements CacheInterface, \ArrayAccess
      *
      * @param mixed     $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         $this->delete($offset);
     }
